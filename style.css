@@ -1,0 +1,13 @@
+h1 {
+  text-align: center;
+}
+
+footer {
+  display: flex;
+  align-items: flex-start;
+}
+
+.footer-col {
+  flex: 1;
+  padding: 20px;
+}
