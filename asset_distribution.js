@@ -25,16 +25,15 @@ value.textContent = slider.value;
 // update text content and image when slider is moved
 slider.oninput = function() {
     value.textContent = this.value;
-    img.setAttribute("src", "plots/" + this.value + ".svg");
+    img.setAttribute("src", "plots/" + this.value + ".png");
 }
 
 // click buttons to move slider
-
 forward.onclick = function() {
     if (parseInt(slider.value) < max) {
         slider.value = parseInt(slider.value) + 1;
         value.textContent = slider.value;
-        img.setAttribute("src", "plots/" + slider.value + ".svg");
+        img.setAttribute("src", "plots/" + slider.value + ".png");
     }
 }
 
@@ -42,10 +41,11 @@ back.onclick = function() {
     if (parseInt(slider.value) > min) {
         slider.value = parseInt(slider.value) - 1;
         value.textContent = slider.value;
-        img.setAttribute("src", "plots/" + slider.value + ".svg");
+        img.setAttribute("src", "plots/" + slider.value + ".png");
     }
 }
 
+// click play button to start/stop animation
 play.onclick = function() {
     if (interval) {
         clearInterval(interval);
@@ -59,7 +59,7 @@ play.onclick = function() {
             i++;
             slider.value = i;
             value.textContent = i;
-            img.setAttribute("src", "plots/" + i + ".svg");
+            img.setAttribute("src", "plots/" + i + ".png");
         } else {
             clearInterval(interval);
             interval = null;
@@ -67,16 +67,14 @@ play.onclick = function() {
     }, 100);
 }
 
-// hold buttons to move slider
-
+// hold buttons to move slider to min/max
 back.onmousedown = function() {
     holdTimeout = setTimeout(function() {
         slider.value = min;
         value.textContent = slider.value;
-        img.setAttribute("src", "plots/" + slider.value + ".svg");
+        img.setAttribute("src", "plots/" + slider.value + ".png");
     }, holdTime);
 }
-
 back.onmouseup = function() {
     clearTimeout(holdTimeout);
 }
@@ -88,7 +86,6 @@ forward.onmousedown = function() {
         img.setAttribute("src", "plots/" + slider.value + ".svg");
     }, holdTime);
 }
-
 forward.onmouseup = function() {
     clearTimeout(holdTimeout);
 }
