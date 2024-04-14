@@ -62,6 +62,7 @@ play.onclick = function() {
             img.setAttribute("src", "plots/" + i + ".svg");
         } else {
             clearInterval(interval);
+            interval = null;
         }
     }, 100);
 }
