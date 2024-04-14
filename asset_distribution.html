@@ -3,6 +3,7 @@
     <title>Asset Distribution</title>
     <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="asset_distribution.js" defer></script>
   </head>
   <body>
     <header>
@@ -20,7 +21,43 @@
       </nav>
     </header>
 
-    <main></main>
+    <main>
+      <h2>Asset Distribution</h2>
+
+      <p id="assetdist-text">
+        I simulated the model for 100 periods 10000 times. I set initial human
+        capital to 1 and assets to 0 for all agents, reflecting being born with
+        no assets and the replacement level of human capital. I interpolated the
+        calculated policy functions and used random draws to simulate level of
+        human capital and assets for each agent at each point in time.
+      </p>
+
+      <div class="assetdist_plot">
+        <img src="plots/1.svg" alt="" id="assetdist_svg" />
+        <div>Time from start of simulation: <output id="t_value"></output></div>
+        <div class="assetdist_slider">
+          <div class="assetdist_buttons">
+            <button id="t_back">
+              <img src="icons/icons8-rewind-32.png" />
+            </button>
+            <button id="t_play">
+              <img src="icons/icons8-play-32.png" />
+            </button>
+            <button id="t_forward">
+              <img src="icons/icons8-fast-forward-32.png" />
+            </button>
+          </div>
+          <input
+            id="t_input"
+            type="range"
+            value="1"
+            min="1"
+            max="100"
+            step="1"
+          />
+        </div>
+      </div>
+    </main>
 
     <footer>
       <div class="footer-col">

@@ -23,3 +23,39 @@ footer {
   flex: 1;
   padding: 20px;
 }
+
+.assetdist_plot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.assetdist_slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.assetdist_buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 10px;
+}
+
+.assetdist_buttons button {
+  margin: 0 2px;
+  background-color: whitesmoke;
+  border-color: black;
+  height: 30px;
+  width: 30px;
+}
+
+#t_input {
+  width: 300px;
+  margin: 0 auto;
+}
+
+#assetdist-text {
+  margin-bottom: 0;
+}
