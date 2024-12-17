@@ -3,6 +3,7 @@
     <title>Asset Distribution</title>
     <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
     <script src="asset_distribution.js" defer></script>
   </head>
   <body>
@@ -33,7 +34,14 @@
       </p>
 
       <div class="assetdist_plot">
-        <img src="plots/1.png" alt="" id="assetdist_svg" />
+        <div id="plot_container" style="position: relative">
+          <img
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+            alt=""
+            id="assetdist_svg"
+            style="display: block"
+          />
+        </div>
         <div>Time from start of simulation: <output id="t_value"></output></div>
         <div class="assetdist_slider">
           <div class="assetdist_buttons">
